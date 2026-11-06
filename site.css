@@ -64,8 +64,10 @@ figcaption { color: var(--muted); font-size: .9rem; margin-top: .5rem; }
 .feed .post { display: block; text-decoration: none; color: var(--muted); font-size: .85rem; }
 .feed .post img { width: 100%; aspect-ratio: 1; object-fit: cover; object-position: top; border: 1px solid var(--line); }
 .feed .post b { color: var(--fg); }
+.feed .post .post-title { display: block; color: var(--fg); margin-top: .15rem; line-height: 1.35; }
+.section-intro { color: var(--muted); margin: -.5rem 0 1.25rem; }
 .endorsement { margin: 0; max-width: 44rem; }
 .endorsement p { font-size: 1.3rem; line-height: 1.45; margin: 0 0 .75rem; }
 .endorsement cite { color: var(--muted); font-style: normal; }
-@media (min-width: 700px) { .home-hero { grid-template-columns: 1fr auto; } .feed { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 700px) { .home-hero { grid-template-columns: 1fr auto; } .feed { grid-template-columns: repeat(3, 1fr); } }
 
