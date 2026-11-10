@@ -395,3 +395,13 @@ a:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 3px; }
   .t-quote .endorsement cite { grid-column: 1; grid-row: 2; align-self: end; display: flex; flex-direction: column; align-items: flex-start; gap: .7rem; line-height: 1.6; }
   .t-quote .endorsement p { grid-column: 2; grid-row: 1 / span 2; margin: 0; font-size: clamp(1.5rem, 1rem + 1.6vw, 2.4rem); line-height: 1.18; max-width: 38ch; }
 }
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) and (min-width: 700px) {
+    .cover .shot { animation: lift linear both; animation-timeline: scroll(root); animation-range: 0 120vh; }
+    .cover .shot-1, .cover .shot-3 { --lift: -30px; } .cover .shot-2, .cover .shot-4 { --lift: -150px; }
+    @keyframes lift { from { transform: none; } to { transform: translateY(var(--lift)); } }
+  }
+  @media (prefers-reduced-motion: no-preference) and (min-width: 1200px) {
+    .cover .shot-1 { --lift: -40px; } .cover .shot-2 { --lift: -170px; } .cover .shot-3 { --lift: -90px; } .cover .shot-4 { --lift: -230px; }
+  }
+}
