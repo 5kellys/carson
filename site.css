@@ -476,3 +476,8 @@ a:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 3px; }
 .video-grid figcaption { padding: .8rem 1rem 1rem; font-size: .92rem; line-height: 1.4; color: var(--ink); }
 .gallery figcaption .watch { display: flex; width: fit-content; }
 .inner .video-grid .video { width: 100%; max-width: none; aspect-ratio: 16 / 9; }
+
+/* A single photo right before a gallery (Choreography's banner) spans the gallery's width; a gallery of four is one row. */
+.inner .body > figure:has(+ .gallery) { width: min(88rem - 40px, 100vw - 40px); max-width: none; margin-bottom: 0; }
+.inner .body > figure:has(+ .gallery) img { width: 100%; aspect-ratio: 2 / 1; object-fit: cover; }
+@media (min-width: 900px) { .gallery:has(> figure:nth-child(4):last-child) { grid-template-columns: repeat(4, 1fr); } }
