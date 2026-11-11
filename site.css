@@ -76,6 +76,7 @@ main { max-width: 88rem; margin: 0 auto; padding: 10px 20px 3rem; }
 .t-stat.accent { background: var(--ink); border-color: var(--ink); color: var(--page); }
 .t-stat.accent span { color: var(--page); opacity: .8; }
 @media (max-width: 799px) { .t-stat { min-height: 0; } .t-stat:not(.accent) b { font-size: 2.6rem; } }
+@media (max-width: 559px) { .board.numbers { grid-template-columns: 1fr; } }
 @media (min-width: 800px) { .board.numbers { gap: 14px; grid-template-columns: 1fr 1.4fr 1fr; } .board.numbers .accent { grid-column: auto; grid-row: auto; } .t-stat { min-height: 15rem; } }
 
 .experience, .work { margin-top: clamp(64px, 9vw, 120px); }
@@ -405,3 +406,13 @@ a:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 3px; }
     .cover .shot-1 { --lift: -40px; } .cover .shot-2 { --lift: -170px; } .cover .shot-3 { --lift: -90px; } .cover .shot-4 { --lift: -230px; }
   }
 }
+
+/* Quotes from colleagues inside a piece ("> words" / "> — Name, Title" in work.md); in a row they share a grid. */
+.inner .kudos-grid { display: grid; gap: var(--gap); grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); margin: 1.5rem 0 2.5rem; width: min(88rem - 40px, 100vw - 40px); max-width: none; }
+.kudos { position: relative; margin: 0; display: flex; flex-direction: column; justify-content: space-between; gap: 1.4rem; background: var(--tile); border: 1px solid var(--line); border-top: 4px solid var(--accent); padding: 3.2rem 1.5rem 1.4rem; }
+.kudos::before { content: "\201C"; position: absolute; top: .1rem; left: 1.2rem; font: 400 4.5rem/1 var(--serif); color: var(--accent); }
+.kudos p { margin: 0; font: italic 400 1.3rem/1.3 var(--italic); text-wrap: pretty; }
+.kudos cite { font: 500 .72rem/1.5 var(--mono); text-transform: uppercase; letter-spacing: .1em; font-style: normal; color: var(--muted); }
+
+/* Social posts: thumbnails show the middle of the picture (Carson, 2026-11-10). A reference's imagePosition still wins. */
+.post img.social, .ref-card img.social { object-position: center; }
