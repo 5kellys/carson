@@ -489,3 +489,23 @@ a:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 3px; }
 .inner .body > figure:has(+ .gallery) { margin-top: 1.5rem; }
 .inner .body > figure:has(+ .gallery) + .gallery { margin-top: var(--gap); }
 .inner .gallery:has(> figure:nth-child(4):last-child) { width: min(60rem, 100vw - 40px); }
+
+/* Resume: each role is a card (Carson: "each role should stand out"). */
+.resume .job { margin: 1rem 0; padding: 1.3rem 1.5rem 1rem; background: var(--tile); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 14px; }
+.resume .job h3 { margin: 0 0 .35rem; }
+.resume .job .job-title { display: block; font: 400 clamp(1.3rem, 1.1rem + .6vw, 1.6rem)/1.15 var(--serif); }
+.resume .job .job-org { display: block; margin-top: .3rem; font-weight: 600; font-size: 1rem; color: var(--accent-ink); }
+.resume .job h3 + p { margin: 0 0 .2rem; font: 500 .74rem/1.5 var(--mono); font-style: normal; text-transform: uppercase; letter-spacing: .1em; }
+.resume .job h3 + p em { font-style: normal; }
+.resume .job ul { margin: .7rem 0 0; }
+.resume .job li { margin: .35rem 0; }
+@media print { .resume .job { background: none; border: 0; border-left: 2px solid #000; border-radius: 0; padding: .2rem 0 .2rem .8rem; break-inside: avoid; } .resume .job .job-org { color: #000; } }
+
+/* The XiFin Web example (a lone reference card), smaller (Carson, 2026-11-10). */
+.inner .ref-grid.solo { max-width: 40rem; }
+@media (min-width: 700px) {
+  .ref-grid.solo .ref-card { grid-template-columns: 1fr 1fr; }
+  .ref-grid.solo .ref-card img { min-height: 0; height: 100%; aspect-ratio: 4 / 3; }
+  .ref-grid.solo .ref-card strong { font-size: 1.4rem; }
+  .ref-grid.solo .ref-card .ref-desc { -webkit-line-clamp: 3; }
+}
