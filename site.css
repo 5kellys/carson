@@ -433,3 +433,14 @@ a:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 3px; }
 .work-index .card .card-prev { color: var(--ink); border-top: 0; padding: 0 0 0 1rem; margin-top: 1.1rem; border-left: 2px solid var(--accent); }
 .work-index .card .card-prev b { display: block; font: 400 clamp(1.2rem, 1rem + .6vw, 1.5rem)/1.1 var(--serif); }
 .work-index .card .card-prev i { display: block; font: 500 .72rem/1.4 var(--mono); font-style: normal; text-transform: uppercase; letter-spacing: .12em; color: var(--accent-ink); margin-top: .35rem; }
+@media (min-width: 900px) { .inner .tile-row { display: grid; grid-template-columns: repeat(5, 1fr); overflow: visible; padding-bottom: 0; } .mini-stat { flex: none; } .mini-stat:nth-child(3n+2) { background: var(--tile); border-color: var(--line); color: inherit; } .mini-stat:nth-child(3n+2) span { color: var(--muted); opacity: 1; } .mini-stat:nth-child(5n+2), .mini-stat:nth-child(5n+4) { background: var(--accent); border-color: var(--accent); color: var(--on-accent); } .mini-stat:nth-child(5n+2) span, .mini-stat:nth-child(5n+4) span { color: var(--on-accent); opacity: .85; } }
+
+/* A single reference on its own (the XiFin page's Web section): one wide card, picture beside the text from 700px. */
+.inner .ref-grid.solo { grid-template-columns: 1fr; max-width: 60rem; }
+@media (min-width: 700px) {
+  .ref-grid.solo .ref-card { display: grid; grid-template-columns: 1.1fr 1fr; grid-template-rows: auto auto auto 1fr; align-content: start; }
+  .ref-grid.solo .ref-card img { grid-row: 1 / -1; height: 100%; aspect-ratio: auto; min-height: 20rem; }
+  .ref-grid.solo .ref-card .ref-site { padding-top: 1.6rem; }
+  .ref-grid.solo .ref-card strong { font: 400 1.8rem/1.1 var(--serif); padding-top: .3rem; }
+  .ref-grid.solo .ref-card .ref-desc { -webkit-line-clamp: 5; }
+}
