@@ -484,3 +484,8 @@ a:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 3px; }
 /* A gallery of two landscape photos (the Videography installation): side by side, uncropped. */
 @media (min-width: 600px) { .gallery:has(> figure:nth-child(2):last-child) { grid-template-columns: repeat(2, 1fr); } }
 .gallery:has(> figure:nth-child(2):last-child) img { aspect-ratio: 3 / 2; object-position: 50% 50%; }
+/* Choreography (Carson: photos too big): the banner and the gallery after it match the video's width. */
+.inner .body > figure:has(+ .gallery), .inner .body > figure:has(+ .gallery) + .gallery { width: min(60rem, 100vw - 40px); }
+.inner .body > figure:has(+ .gallery) { margin-top: 1.5rem; }
+.inner .body > figure:has(+ .gallery) + .gallery { margin-top: var(--gap); }
+.inner .gallery:has(> figure:nth-child(4):last-child) { width: min(60rem, 100vw - 40px); }
