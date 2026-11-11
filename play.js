@@ -1,0 +1,22 @@
+document.addEventListener('click', function (e) {
+  var a = e.target.closest('a[data-embed]');
+  if (!a) return;
+  var fig = a.closest('figure');
+  if (!fig) return;
+  e.preventDefault();
+  var src = a.getAttribute('data-embed');
+  src += (src.indexOf('?') < 0 ? '?' : '&') + 'autoplay=1';
+  var box = document.createElement('div');
+  box.className = 'video';
+  var f = document.createElement('iframe');
+  f.src = src;
+  f.title = a.getAttribute('data-title') || 'Video';
+  f.allow = 'autoplay; fullscreen; picture-in-picture';
+  f.allowFullscreen = true;
+  box.appendChild(f);
+  var old = fig.querySelector('.play');
+  if (old) old.replaceWith(box); else fig.insertBefore(box, fig.firstChild);
+  fig.classList.add('playing');
+  var w = fig.querySelector('.watch');
+  if (w) w.remove();
+});
