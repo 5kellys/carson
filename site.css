@@ -509,3 +509,7 @@ a:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 3px; }
   .ref-grid.solo .ref-card strong { font-size: 1.4rem; }
   .ref-grid.solo .ref-card .ref-desc { -webkit-line-clamp: 3; }
 }
+
+/* About: the certificates stay inside the text column, shown whole (never cropped). */
+.inner .page-about .gallery { width: auto; max-width: 100%; align-items: start; }
+.page-about .gallery:has(> figure:nth-child(2):last-child) img { aspect-ratio: auto; height: auto; object-fit: contain; }
